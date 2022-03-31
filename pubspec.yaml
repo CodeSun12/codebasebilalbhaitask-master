@@ -41,7 +41,7 @@ dependencies:
   http: ^0.13.4
   provider:
   fluttertoast:
-  dio: ^4.0.5
+  geocoding:
 
 dev_dependencies:
   flutter_test:

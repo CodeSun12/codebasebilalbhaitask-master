@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:codebasebilalbhaitask/model/GetMyModel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:http/http.dart' as http;
 
@@ -82,3 +83,17 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+
+
+//
+// GoogleMap(
+// initialCameraPosition: CameraPosition(
+// target: LatLng(snapshot.data[i].latitude, snapshot.data[i].longitude),
+// ),
+// mapType: MapType.normal,
+// zoomControlsEnabled: false,
+// onMapCreated: (GoogleMapController controller){
+// googleMapController = controller;
+// },
+// )

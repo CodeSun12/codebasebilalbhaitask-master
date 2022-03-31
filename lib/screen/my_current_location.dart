@@ -30,30 +30,7 @@ class _MyCurrentLocationState extends State<MyCurrentLocation> {
   // Markers Which we will show on google map
   Set<Marker> markers = {};
 
-
-  // void uploadData(Position position, String timestamp) async{
-  //   try{
-  //     var response = await post(Uri.parse('http://codebase.pk:8800/api/location/'),
-  //         body: {
-  //           "latitude": position.latitude,
-  //           "longitude": position.longitude,
-  //           "timestamp": timestamp,
-  //         });
-  //     if(response.statusCode == 200){
-  //       var data = jsonDecode(response.body.toString());
-  //       print(data);
-  //       print("Uploaded Location Successfully");
-  //       Fluttertoast.showToast(msg: "Uploaded Successfully");
-  //     }else{
-  //       print("Not Uploaded Location");
-  //       Fluttertoast.showToast(msg: "Not Uploaded Successfully");
-  //     }
-  //   }catch(e){
-  //     print(e.toString());
-  //   }
-  // }
-
-  @override
+    @override
   Widget build(BuildContext context) {
     CheckoutProvider checkoutProvider = Provider.of(context);
     return Scaffold(
@@ -64,7 +41,7 @@ class _MyCurrentLocationState extends State<MyCurrentLocation> {
         actions: [
           IconButton(onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (context)=> PullDataClass()));
-          }, icon: Icon(Icons.search, size: 25,)),
+          }, icon: Icon(Icons.push_pin, size: 25,)),
           IconButton(onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (context)=> GetLocationFromServer()));
           }, icon: Icon(Icons.add, size: 25,)),
