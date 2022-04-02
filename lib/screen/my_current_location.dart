@@ -79,8 +79,7 @@ class _MyCurrentLocationState extends State<MyCurrentLocation> {
           markers.clear();
           markers.add(Marker(markerId: const MarkerId("Current Location"),
               position: LatLng(checkoutProvider.position!.latitude, checkoutProvider.position!.longitude)));
-          setState(() {
-          });
+          setState(() {});
 
         },
         label: const Text("Current Location", style: TextStyle(fontWeight: FontWeight.bold),),

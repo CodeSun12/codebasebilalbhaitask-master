@@ -1,9 +1,12 @@
+import 'package:codebasebilalbhaitask/practice/getdata.dart';
 import 'package:codebasebilalbhaitask/screen/my_current_location.dart';
 import 'package:codebasebilalbhaitask/screen/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'address.dart';
+import 'LiveTracking/get_live_location_tracking_values.dart';
+import 'LiveTracking/live_location_tracking.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +25,7 @@ class MyApp extends StatelessWidget {
       child: const MaterialApp(
         title: "Current Location",
         debugShowCheckedModeBanner: false,
-        home: GetAddress(),
+        home: LiveTracking(),
       ),
     );
   }

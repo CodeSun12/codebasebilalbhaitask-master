@@ -41,28 +41,7 @@ class CheckoutProvider with ChangeNotifier {
     } catch (e) {
       print(e.toString());
     }
-  }
 
-
-
-
-  ////////////////////// Get Data From Server /////////////////////////
-  List <GetMyModel>  postList = [];
-  Position? getMyPosition;
-
-
-//Get Api Method
-  Future<List<GetMyModel>> getPostApi() async{
-    final response = await http.get(Uri.parse('http://codebase.pk:8800/api/location/'));
-    var data = jsonDecode(response.body.toString());
-    if (response.statusCode == 200){
-      for(Map i in data){
-        postList.add(GetMyModel.fromJson(i));
-      }
-      return postList;
-    }else{
-      return postList;
-    }
   }
 
 }
