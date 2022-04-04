@@ -10,6 +10,9 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:http/http.dart';
 import 'package:location/location.dart';
 
+import '../model/GetMyModel.dart';
+import 'package:http/http.dart' as http;
+
 
 class LiveTracking extends StatefulWidget {
   const LiveTracking({Key? key}) : super(key: key);
@@ -82,7 +85,7 @@ class _LiveTrackingState extends State<LiveTracking> {
                     bearing: 192.8334901395799,
                     target: LatLng(newLocalData.latitude!, newLocalData.longitude!),
                     tilt: 0,
-                    zoom: 18.0
+                    zoom: 18.0,
                 ),
               ));
           updataMarkerAndCircle(newLocalData, imageData);
@@ -127,7 +130,6 @@ class _LiveTrackingState extends State<LiveTracking> {
       print(e.toString());
     }
   }
-
 
 
   @override
