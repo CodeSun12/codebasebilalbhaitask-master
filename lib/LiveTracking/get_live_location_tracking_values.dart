@@ -33,6 +33,8 @@ class _GetLiveLocationTrackingState extends State<GetLiveLocationTracking> {
     final response = await http.get(
         Uri.parse('http://codebase.pk:8800/api/location/'));
     var data = jsonDecode(response.body.toString());
+    // List selectedMap = data as List;
+    // var myData = selectedMap.last;
     print(data);
     setState(() {
       if(data != null){
@@ -40,13 +42,13 @@ class _GetLiveLocationTrackingState extends State<GetLiveLocationTracking> {
       }
     });
     if (response.statusCode == 200) {
-      for (var i in data) {
-        postList.add(GetMyModel.fromJson(i));
         setState(() {
-          for(int x = 0; x < _data.length; x++){
+          for(int x = 0; x < data.length - 1; x++){
+            print( "index $x");
             var latitude = _data[x]['latitude'];
             var longitude = _data[x]['longitude'];
             String timestamp  = _data[x]['timestamp'];
+            print(longitude);
             LatLng myLocation = LatLng(latitude!, longitude!);
             if (list.contains(myLocation)){
               list.clear();
@@ -54,17 +56,20 @@ class _GetLiveLocationTrackingState extends State<GetLiveLocationTracking> {
             }else{
               list.add(myLocation);
             }
-            addMarker(list[x], x);
+            addMarker(list[x]);
           }
         });
-      }
+
     }
   }
 
+
+
+
 //Adding Index here as an argument
-  void addMarker(loc, index) {
+  void addMarker(loc) {
     //Making this markerId dynamic
-    final MarkerId markerId = MarkerId('Marker  $index');
+    final MarkerId markerId = MarkerId('Marker');
 
     final Marker marker = Marker(
       markerId: markerId,
@@ -120,6 +125,10 @@ class _GetLiveLocationTrackingState extends State<GetLiveLocationTracking> {
     );
   }
 }
+
+
+
+
 
 
 
